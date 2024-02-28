@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex-17 CRUD</title>
+    <link rel="stylesheet" href="script/Ex-17 CRUD.css"></link>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="subWrapper">
+        <div id="imageArea">
+            <div id="profileArea">
+                <image id="imageInput" ></image>
+                <label id="uploadImage" onchange="clearArea(id)">Upload
+                <input type="file"  id="myFile" accept="image/png, image/gif, image/jpeg" ></label>
+                <span id="important">*</span>
+                <div  class="alertMessage" id="imageInputInvalid">Upload Image</div>
+            </div>
+            <div id="calendar">
+            <div id="dob">Date Of Birth <span id="important">*</span></div>
+            <input type="date" onchange="clearArea(id)" class="inputArea" id="dateInput" /></input>
+            <div class="alertMessage" id="dateInputInvalid">Enter the date of birth</div>
+            <div>Select Country <span id="important">*</span></div>
+            <select class="selection" id="country" onclick="clearArea(id)">
+                <option value="">Select Country</option>
+            </select>
+            <div class="alertMessage" id="countryInvalid">select the country</div>
+        </div>
+        </div>
+        <div id="personalDetails1">
+            <div>Select Organization <span id="important">*</span></div>
+            <select class="selection" id="organization" onclick="clearArea(id)">
+                <option value="">Select Organization</option>
+                <option value="Organization A">A pvt.limited</option>
+                <option value="Organization B">B pvt.limited</option>
+                <option value="Organization C">C pvt.limited</option>
+            </select>
+            <span class="alertMessage" id="organizationInvalid">Enter the organization</span>
+            <div>Last Name <span id="important">*</span></div>
+            <input type="text" id="lastNames" onkeydown="clearArea(id)" class="inputArea" onkeypress="return (event.charCode !=8 && event.charCode ==0 || !(event.charCode >= 48 && event.charCode <= 57) && !(event.charCode >= 58 && event.charCode <= 64) && !(event.charCode >= 91 && event.charCode <= 96) && !(event.charCode >= 123 && event.charCode <= 126) && !(event.charCode >= 33 && event.charCode <= 47))" onchange="this.value = this.value.trim()">
+            <span class="alertMessage" id="lastNamesInvalid">Enter the last Name</span>
+            <div id="mobileNumber">Mobile No <span id="important">*</span></div>
+            <input type="numbers" onkeydown="clearArea(id)" class="inputArea" id="mobile"  maxlength="10" onkeypress="return (event.charCode >=48 && event.charCode <=57)" max="">
+            <span class="alertMessage" id="mobileInvalid">Enter the mobile number</span>
+            <div>Select State</div>
+            <select class="selection" id="state" onclick="clearArea(id)">
+                <option value="">Select State</option>
+            </select>
+            <span class="alertMessage" id="stateInvalid"></span>
+        </div>
+        <div id="personalDetails2">
+            <div>First Name <span id="important">*</span></div>
+            <input type="text" onkeydown="clearArea(id)" id="firstName" class="inputArea" onkeypress="return (event.charCode !=8 && event.charCode ==0 || !(event.charCode >= 48 && event.charCode <= 57) && !(event.charCode >= 58 && event.charCode <= 64) && !(event.charCode >= 91 && event.charCode <= 96) && !(event.charCode >= 123 && event.charCode <= 126) && !(event.charCode >= 32 && event.charCode <= 47))">
+            <span class="alertMessage" id="firstNameInvalid">Enter the first Name</span>
+            <div id="gender">Gender <span id="important">*</span></div>
+            <div id="genderSelection" onchange="genderValue()">
+                <input type="radio" id="male" name="gender" value ="male" checked>
+           <label for="male">Male</label>
+           <input type="radio" id="female" name="gender" value="female">
+           <label for="female">Female</label>
+        </div>
+        <span class="alertMessage"></span>
+        <div id="email">Email Id <span id="important">*</span></div>
+        <input type="email" onkeyup="emailCheck()" onkeydown="clearArea(id)" id="emailAddress" class="inputArea" pattern=".+@email\.com" required>
+        <span id="incorrectForm">Invalid Email Type</span>
+        <span class="alertMessage" id="emailAddressInvalid">Enter the email ID</span>
+        <div id="city">City <span id="important">*</span></div>
+        <input class="inputArea" onkeydown="clearArea(id)" id="cityInput"></input>
+        <span class="alertMessage" id="cityInputInvalid">Enter the city</span>
+        </div>
+    </div>
+        <div id="addressArea">
+            <div id="communication">
+            <div>Communication Address <span id="important">*</span></div>
+            <textarea  onkeydown="clearArea(id)" oninput ="combinAddress()" id="communicationRescidence" class="addressBar" onchange="this.value = this.value.trim()"></textarea>
+            <span class="alertMessage" id="communicationRescidenceInvalid">Enter the adderess</span>
+        </div> 
+        
+        <div id="permanent">
+            <div>Permanent Address <span id="important">*</span></div>
+            <textarea  id="permanentRescidence" class="addressBar" onkeydown="clearArea(id)"></textarea>
+            <span class="alertMessage" id="permanentRescidenceInvalid">Enter the adderess</span>
+        </div>
+        </div>   
+        <div id="agreee">
+            <div id="acceptance">
+            <input id="checkedValue" type="checkbox" onclick="combineAddress()"></input>
+            <div id="acceptance">Communication address same as Permanent address</div>
+            </div>
+        </div>
+        <span id="space"></span>
+        <div id="pin">Pincode <span id="important">*</span></div>
+            <input id="pincode" onclick="clearArea(id)" onkeydown="clearArea(id)" class="inputArea" maxlength="6"> <span class="alertMessage" id="pincodeInvalid">Eneter the pincode</span>
+        <div id="submit">
+            <button id="register" onclick="registeringInputs()">Register</button>
+            <button id="update" >Update</button>
+            <button id="reset" onclick="reset()">Reset</button>
+        </div> 
+        <div id="datass"></div>      
+    </div>
+    <script src ="script/Ex-17 CRUD.js"></script>
+</body>
+</html>

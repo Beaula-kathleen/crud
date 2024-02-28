@@ -1,0 +1,99 @@
+.inputArea{
+    height: 12px;
+    width: 300px;
+}
+#important{
+    color: red;
+}
+#uploadImage{margin-left: 5%;}
+#addressArea{
+    height: 100px;
+    width: 100%;
+}
+.addressBar{
+    height: 70%;
+    width: 90%;
+    text-transform: uppercase;
+}
+.selection{width:84%;}
+#communication,#permanent{width: 100%; display: flex;flex-direction: column;}
+button,#uploadImage{
+    color: white;
+    background-color: limegreen;
+    height: 40px;
+    width: 90px;
+    border: white solid 2px ;
+}
+#uploadImage{color: white;
+    background-color: limegreen;
+    height: 20px;
+    width: 50px;
+    padding: 1% 1%;
+}
+input[type="file"] {
+    display: none;
+}
+#subWrapper,#addressArea,#acceptance,#profileArea,#addressArea{
+    display: flex;
+    flex-direction: row;
+}
+#wrapper,#agree,#bday,#personalDetails1,#personalDetails2{
+    display: flex;
+    flex-direction: column;
+}
+#calendar{
+    margin-top: 20px;
+}
+#space{height: 1.5vh;}
+#submit{
+    display: flex;
+    justify-content: flex-end;
+}
+#imageInput{
+    height: 78%;
+    width: 90%;
+    border-radius: 50%;
+    border: 2px solid  limegreen;
+    background-position: center;
+    background-size: cover;
+}
+#imageInput{
+    height: 16vh;
+    width: 27%;
+}
+#profileArea{
+    align-items: center;
+}
+#subWrapper,#imageArea,#personalDetails1,#personalDetails2{
+    width:100%;
+}
+#wrapper{
+    margin: 3.5% 5%;
+}
+.alertMessage,#incorrectForm{
+    color: red;
+    font-size:smaller;
+    font-weight: 100;
+}
+.alertMessage{ height: 15px;
+    visibility:hidden;
+}
+table, th, td {
+    border:1px solid black;
+  }
+#lastNames,#firstName,#cityInput{
+    /* text-transform: uppercase; */
+}
+.change{padding-left: 25%;}
+  /* #image {
+    display: none; 
+    width: 155px;   
+    border: 2px dashed #333;  
+    margin-bottom: 20px;
+  }
+  #image img {  
+    width: 100%;
+    height: auto; 
+    display: block;   
+  } */
+
